@@ -1,12 +1,15 @@
 ﻿using Kneat_Booking_Automation.BaseClass;
 using NUnit.Framework;
 using Kneat_Booking_Automation.Pages;
+using OpenQA.Selenium;
+using System;
 
 namespace Kneat_Booking_Automation
 {
     [TestFixture]
     class FilterTest : Base
     {
+        
         [Test]
         public void setupConfirmation()
         {
@@ -19,10 +22,10 @@ namespace Kneat_Booking_Automation
 
             //Assertions:
             //Limerick Strand Hotel - Is Listed = True
-            //George Limerick Hotel - Is Listed = True
-            //The Savoy Hotel       - Is Listed = True
             Assert.IsTrue(search.LimerickStrandHotelElement());
+            //George Limerick Hotel - Is Listed = True
             Assert.IsTrue(search.GeorgeLimerickHotelElement());
+            //The Savoy Hotel       - Is Listed = True
             Assert.IsTrue(search.TheSavoyHotelElement());
         }
 
@@ -41,8 +44,8 @@ namespace Kneat_Booking_Automation
 
             //Assertions:
             //Limerick Strand Hotel - Is Listed = True
-            //George Limerick Hotel - Is Listed = False
             Assert.IsTrue(search.LimerickStrandHotelElement());
+            //George Limerick Hotel - Is Listed = False
             Assert.IsFalse(search.GeorgeLimerickHotelElement());
         }
 
@@ -61,8 +64,8 @@ namespace Kneat_Booking_Automation
    
             //Assertions:
             //The Savoy Hotel       - Is Listed = True
-            //George Limerick Hotel - Is Listed = False
             Assert.IsTrue(search.TheSavoyHotelElement());
+            //George Limerick Hotel - Is Listed = False
             Assert.IsFalse(search.GeorgeLimerickHotelElement());
         }
 

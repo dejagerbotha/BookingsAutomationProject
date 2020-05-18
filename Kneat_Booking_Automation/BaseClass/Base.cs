@@ -29,6 +29,15 @@ namespace Kneat_Booking_Automation.BaseClass
 
             //Initialize calendar and execute function
             calendarSelection.dateCalculation();
+
+            //Select requirements modal
+            landingPage.selectGuestRequirementModal();
+            //Add required amount of adults
+            landingPage.requiredAdultsSelect();
+            //Add required amount of children
+            landingPage.requiredChildrenSelect();
+            //Add required amount of rooms
+            landingPage.requiredRoomsSelect();
         }
 
         [TearDown]
